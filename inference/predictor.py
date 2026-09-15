@@ -1,4 +1,5 @@
 
+from pathlib import Path
 import json
 import joblib
 import numpy as np
@@ -9,14 +10,17 @@ import pandas as pd
 # MODEL PACKAGE LOADING
 # ============================================================
 
-cost_final_model = joblib.load("cost_final_model.joblib")
-schedule_final_model = joblib.load("schedule_final_model.joblib")
-cox_model = joblib.load("cox_model.joblib")
+BASE_DIR = Path(__file__).resolve().parent
+MODELS_DIR = (BASE_DIR / ".." / "models").resolve()
 
-feature_columns = joblib.load("feature_columns.joblib")
-cox_feature_columns = joblib.load("cox_feature_columns.joblib")
+cost_final_model = joblib.load(MODELS_DIR / "cost_final_model.joblib")
+schedule_final_model = joblib.load(MODELS_DIR / "schedule_final_model.joblib")
+cox_model = joblib.load(MODELS_DIR / "cox_model.joblib")
 
-with open("model_manifest.json", "r") as f:
+feature_columns = joblib.load(MODELS_DIR / "feature_columns.joblib")
+cox_feature_columns = joblib.load(MODELS_DIR / "cox_feature_columns.joblib")
+
+with open(MODELS_DIR / "model_manifest.json", "r") as f:
     package_metadata = json.load(f)
 
 

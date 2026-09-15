@@ -314,7 +314,7 @@ model_metadata.json
 Example:
 
 ```python
-from predictor import predict_project_row
+from inference.predictor import predict_project_row
 
 result = predict_project_row(project_features)
 print(result)
@@ -485,31 +485,46 @@ The repository contains the model code and artifacts without exposing the underl
 ```text
 PAIMANA-AI-ML/
 │
-├── predictor.py
-│
-├── cost_final_model.joblib
-├── schedule_final_model.joblib
-├── cox_model.joblib
-├── feature_columns.joblib
-├── cox_feature_columns.joblib
-│
-├── model_manifest.json
-├── model_metadata.json
-│
+├── README.md
+├── .gitignore
 ├── pyproject.toml
 ├── uv.lock
 │
-├── 02_baselines.ipynb
-├── 02_baselines2.ipynb
-├── ML_MODEL_PACKAGE.ipynb
-├── Phase_4_Explainability.ipynb
-├── Phase_5_Risk_Score_Survival.ipynb
-├── Phase_6_Model_Packaging.ipynb
-├── phase-0.ipynb
+├── notebooks/
+│   ├── phase-0.ipynb
+│   ├── 02_baselines.ipynb
+│   ├── 02_baselines2.ipynb
+│   ├── newww.ipynb
+│   ├── ML_MODEL_PACKAGE.ipynb
+│   ├── Phase_4_Explainability.ipynb
+│   ├── Phase_5_Risk_Score_Survival.ipynb
+│   └── Phase_6_Model_Packaging.ipynb
 │
-├── ML_model_files/
+├── models/
+│   ├── cost_final_model.joblib
+│   ├── schedule_final_model.joblib
+│   ├── cox_model.joblib
+│   ├── feature_columns.joblib
+│   ├── cox_feature_columns.joblib
+│   ├── phase4_checkpoint.joblib
+│   ├── model_manifest.json
+│   └── model_metadata.json
 │
-└── .gitignore
+├── inference/
+│   └── predictor.py
+│
+├── archives/
+│   └── ML_model_files.zip
+│
+└── data/
+    ├── 5-star edible sushi.csv
+    ├── Editable_superClean_sushi.csv
+    ├── Editable_superClean_sushi++.csv
+    ├── missing_data_report.csv
+    ├── paimana_train_v1.parquet
+    ├── superReady_sushi.csv
+    ├── sushi_gaanduuu.csv
+    └── sushitime.csv
 ```
 
 Training datasets are intentionally not part of the repository.
