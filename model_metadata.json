@@ -1,0 +1,29 @@
+{
+    "package_version": "1.0.0",
+    "training_data": "5-star edible sushi.csv",
+    "models": {
+        "cost": "cost_final_model.joblib",
+        "schedule": "schedule_final_model.joblib",
+        "cox": "cox_model.joblib"
+    },
+    "feature_lists": {
+        "xgb": "feature_columns.joblib",
+        "cox": "cox_feature_columns.joblib"
+    },
+    "xgb_feature_count": 47,
+    "cox_feature_count": 10,
+    "risk_outputs": {
+        "cost_probability": "cost_risk_probability",
+        "schedule_probability": "schedule_risk_probability",
+        "composite_score": "composite_risk_score",
+        "risk_tier": "risk_tier",
+        "cox_risk": "cox_risk"
+    },
+    "risk_tiers": {
+        "LOW": "0-25",
+        "WATCH": "25-50",
+        "ELEVATED": "50-75",
+        "CRITICAL": "75-100"
+    },
+    "created_at": "2026-09-14T01:48:14.360598"
+}
